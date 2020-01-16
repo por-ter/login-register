@@ -1,3 +1,37 @@
-<h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= name %></p>
+<h1><span class="blue">|</span>PR<span class="blue">.</span><span class="yellow">ONE|</pan></h1>
+    
+    <h2>Benutzer <%= firstname + ' ' + lastname %> angemeldet</h2>
+
+    <div class="funcbar" id="funcbar">
+        
+        
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onchange="newRow(); testFunc();">
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
+    </div>
+
+    <table class="container" id="myTable">
+        <thead>
+            <tr>
+                <th><h1>Zeit</h1></th>
+                <th><h1>Datum</h1></th>
+                <th><h1>Bezeichnung</h1></th>
+                <th><h1>Kommentar</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- {{!-- <tr>
+                <td>08:06</td>
+                <td>Tue 17-12-2019</td>
+                <td>Kommen</td>
+                <td></td>
+                <td><button></button></td>
+            </tr>                 --}} -->
+        </tbody>
+    </table>
+
 <a href="/users/logout" class="btn btn-secondary">Logout</a>

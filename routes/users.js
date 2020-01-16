@@ -7,18 +7,18 @@ const passport = require('passport');
 const User = require('../models/User');
 
 // Login page
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', (req, res) => res.render('login', { layout: 'layout2' } ));
 
 // Register page
-router.get('/register', (req, res) => res.render('register'));
+router.get('/register', (req, res) => res.render('register', { layout: 'layout2' } ));
 
 // Register Handle
 router.post('/register', (req, res) => {
-    const { name, email, password, password2} = req.body;
+    const { username, firstname, lastname, email, password, password2} = req.body;
     let errors = [];
 
     // Check required firlds
-    if (!name || !email || !password || !password2) {
+    if (!username || !firstname || !lastname || !email || !password || !password2) {
         errors.push({ msg: 'Please fill in all fields'});
     }
 
@@ -35,7 +35,9 @@ router.post('/register', (req, res) => {
     if (errors.length > 0) {
         res.render('register', {
             errors,
-            name,
+            username,
+            firstname,
+            lastname,
             email,
             password,
             password2
@@ -49,14 +51,18 @@ router.post('/register', (req, res) => {
                     errors.push({ msg: 'Email is already registered'});
                     res.render('register', {
                         errors,
-                        name,
+                        username,
+                        firstname,
+                        lastname,
                         email,
                         password,
                         password2
                     });
                 } else {
                     const newUser = new User({
-                        name,
+                        username,
+                        firstname,
+                        lastname,
                         email,
                         password
                     });

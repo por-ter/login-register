@@ -2,22 +2,22 @@
     
     <h2>Benutzer <%= firstname + ' ' + lastname %> angemeldet</h2>
 
-    <div class="funcbar" id="funcbar">
-        
-        
-        <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onchange="newRow(); testFunc();">
-            <label class="onoffswitch-label" for="myonoffswitch">
-                <span class="onoffswitch-inner"></span>
-                <span class="onoffswitch-switch"></span>
-            </label>
-        </div>
+    <div class="funcbar" id="funcbar">        
+        <form action="/index/dashboard" method="put">
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onchange="newRow(); testFunc(); this.form.submit();">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+        </form>        
     </div>
 
     <table class="container" id="myTable">
         <thead>
             <tr>
-                <th><h1>Zeit</h1></th>
+                <th id="zeit" name ="zeit"><h1>Zeit</h1></th>
                 <th><h1>Datum</h1></th>
                 <th><h1>Bezeichnung</h1></th>
                 <th><h1>Kommentar</h1></th>

@@ -42,7 +42,7 @@ app.use(passport.session());
 // Connect Flash
 app.use(flash());
 
-// Global vars
+// Global vars.
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
@@ -53,6 +53,7 @@ app.use((req, res, next) => {
 // Routes 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+// app.use('/stempeln', require('./routes/stempeln'));
 
 const PORT = process.env.PORT || 5000;
 

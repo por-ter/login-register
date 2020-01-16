@@ -1,3 +1,5 @@
+const router = express.Router();
+
 function newRow() {
     const checkbox = document.getElementById('myonoffswitch');
     const kommen = 'Kommen'
@@ -17,6 +19,7 @@ function newRow() {
 
     // Zeit - Cell1
     let stempelnZeit = document.createTextNode(now.toLocaleTimeString('de-DE'))
+    
 
     // Datum - Cell2
     let stempelnDatum = document.createTextNode(now.toDateString())

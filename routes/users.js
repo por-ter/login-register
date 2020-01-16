@@ -14,7 +14,7 @@ router.get('/register', (req, res) => res.render('register', { layout: 'layout2'
 
 // Register Handle
 router.post('/register', (req, res) => {
-    const { username, firstname, lastname, email, password, password2} = req.body;
+    const { username, firstname, lastname, email, password, password2 } = req.body;
     let errors = [];
 
     // Check required firlds
